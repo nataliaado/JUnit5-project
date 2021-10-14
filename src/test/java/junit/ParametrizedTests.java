@@ -47,7 +47,7 @@ public class ParametrizedTests {
     }
 
     @ParameterizedTest
-    @CsvFileSource(files = "src/test/resources/params/shoppinglist.csv", numLinesToSkip = 1)
+    @CsvFileSource(files = {"src/test/resources/params/shoppinglist.csv","src/test/resources/params/shoppinglist2.csv"}, numLinesToSkip = 1)
     void csvFileSource_StringDoubleIntStringString(String name, double price, int quantity, String unitOfMeasure, String provider) {
         System.out.println("name = " + name + ", price = " + price + ", quantity = " + quantity + ", unitOfMeasure = " + unitOfMeasure + ", provider = " + provider);
     }
