@@ -1,6 +1,7 @@
 package junit;
 
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -45,4 +46,9 @@ public class ParametrizedTests {
         System.out.println("param1 = " + param1 + ", param2 = " + param2);
     }
 
+    @ParameterizedTest
+    @CsvFileSource(files = "src/test/resources/params/shoppinglist.csv", numLinesToSkip = 1)
+    void csvFileSource_StringDoubleIntStringString(String name, double price, int quantity, String unitOfMeasure, String provider) {
+        System.out.println("name = " + name + ", price = " + price + ", quantity = " + quantity + ", unitOfMeasure = " + unitOfMeasure + ", provider = " + provider);
+    }
 }
