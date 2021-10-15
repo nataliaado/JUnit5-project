@@ -51,4 +51,10 @@ public class ParametrizedTests {
     void csvFileSource_StringDoubleIntStringString(String name, double price, int quantity, String unitOfMeasure, String provider) {
         System.out.println("name = " + name + ", price = " + price + ", quantity = " + quantity + ", unitOfMeasure = " + unitOfMeasure + ", provider = " + provider);
     }
+
+    @ParameterizedTest
+    @CsvFileSource(files = "src/test/resources/params/shoppinglist3.csv", numLinesToSkip = 1, delimiterString = "___")
+    void csvFileSource_StringDoubleIntStringStringSpecifiedDelimiter(String name, double price, int quantity, String unitOfMeasure, String provider) {
+        System.out.println("name = " + name + ", price = " + price + ", quantity = " + quantity + ", unitOfMeasure = " + unitOfMeasure + ", provider = " + provider);
+    }
 }
